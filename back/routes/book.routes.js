@@ -8,9 +8,9 @@ const authMiddleware = require("../middlewares/auth.middleware");
 router.get("/", bookController.getAllBooks);
 router.get("/bestrating", bookController.getTopBooks);
 router.get("/:id", bookController.getBookById);
-
-// *******************************************************************
-// Route pour ajouter un nouveau livre
 router.post("/", authMiddleware, multer, bookController.addBook);
+router.put("/:id", authMiddleware, multer, bookController.modifyBook);
+router.delete("/:id", authMiddleware, bookController.deleteBook);
+router.post('/:id/rating', authMiddleware, bookController.rateBook);
 
 module.exports = router;
