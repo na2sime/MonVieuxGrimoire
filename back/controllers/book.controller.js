@@ -1,6 +1,5 @@
 const bookModel = require("../models/book.model");
 const fs = require('fs');
-const mongoSanitize = require('mongo-sanitize');
 
 // Get All
 exports.getAllBooks = async (req, res) => {
